@@ -1,0 +1,54 @@
+.audio_player {
+  position: relative;
+  margin: 0 auto;
+  background-color: #dfdfdf;
+  height: 12rem;
+}
+
+.player {
+  width: 20rem;
+  height: 5rem;
+}
+
+.toggle_buttons {
+  width: auto;
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 10px;
+  margin: 10px;
+  cursor: pointer;
+  z-index: 50;
+}
+
+.toggle_buttons > .MuiSvgIcon-root {
+  margin: 5px;
+  cursor: pointer;
+}
+
+.title {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 10px;
+  margin: 10px;
+}
+
+.tracks {
+  display: flex;
+  justify-content: space-around;
+}
+
+.tracks .btn {
+  font-size: 1.2rem;
+}
+
+.tracks .btn a {
+  padding: 4px 8px;
+}
+
+.tracks .language-select {
+  width: 70px;
+  margin-left: 15px;
+}

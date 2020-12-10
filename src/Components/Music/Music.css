@@ -1,0 +1,12 @@
+.Music {
+  transform: translate(0%, 50%);
+}
+
+.audio {
+  border-radius: 5px !important;
+  width: 25rem;
+  height: 5rem;
+  background-color: #dfdfdf0a !important;
+  border-radius: 10px !important;
+  color: ;
+}
