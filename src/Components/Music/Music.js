@@ -4,6 +4,7 @@ import ReactAudio from 'react-audio-player'
 import './Music.css'
 import {StoreContext} from '../../stores/store' 
 import getBlobDuration from 'get-blob-duration'
+import axios from 'axios'
 
 
 
@@ -11,11 +12,41 @@ import getBlobDuration from 'get-blob-duration'
 
 function Music({}) {
   const store = useContext(StoreContext)
- 
-  // (async function() {
-  //   const duration = await getBlobDuration(store.currentSong)
-  //   console.log(duration + ' seconds')
-  // })()  
+ const [data, setData] = useState()
+  useEffect(() => {
+
+    const url = "https://52-90-82-235.maverickmaven.com/geotourdata/json.cfm?h=-107,37,s,en,3A771765"
+
+    axios({
+       method: 'get',
+       url,
+       responseType: 'stream'
+    }).then(response => {
+        let features = response.data.features.filter(elem => {
+            return  elem.type === 'Feature'
+          })
+            let Series = response.data.features.filter(elem => {
+                    return  elem.type === 'Series'
+                })
+            // let allData = response.data.features.map(el => {
+            //   return el 
+            //  })
+            //  setBothFeatuesAndSeries(allData)
+			 setData(features)
+		
+            //  setData2(allData)
+
+            //  let song = response.data.features.filter(el => {
+            //     return el.assets[0]?.audio === store.currentSong
+            //    })
+
+            //    setSong(song)
+            
+ })
+
+   
+},[])
+
 
    return useObserver(() => (
     <div className='Music'>
@@ -24,6 +55,15 @@ function Music({}) {
     src={store.currentSong}
     controls
     autoPlay
+    onEnded={() => {
+      const Index = store.songIndex + 1
+			store.addSongIndex(Index)
+			const Value = data[Index] 
+			store.addSong(Value?.assets?.[0].audio)
+			store.addName(Value.name)
+			store.addImage(Value.photo)
+
+    }}
     
     /> 
  </div>

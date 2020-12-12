@@ -39,7 +39,8 @@ function PayerContainer() {
             //   return el 
             //  })
             //  setBothFeatuesAndSeries(allData)
-             setData(features)
+			 setData(features)
+			 store.addData(features)
             //  setData2(allData)
 
             //  let song = response.data.features.filter(el => {

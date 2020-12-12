@@ -20,6 +20,10 @@ export const StoreProvider = ({children}) => {
         songIndex: null,
         addSongIndex: songIndex => {
             store.songIndex = songIndex
+        },
+        data: null,
+        addData: data => {
+            store.data = data
         }
 
     }));
