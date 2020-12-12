@@ -99,6 +99,7 @@ function PayerContainer() {
 			const Value = data[Index] 
 			store.addSong(Value?.assets?.[0].audio)
 			store.addName(Value.name)
+			store.addImage(Value.photo)
 		}}
 		>&#8617;</a>
 		  <a id="btnNext" onClick={() => {
@@ -107,6 +108,8 @@ function PayerContainer() {
 			const Value = data[Index] 
 			store.addSong(Value?.assets?.[0].audio)
 			store.addName(Value.name)
+			store.addImage(Value.photo)
+
 		  }}>&#8618;</a>
 		  </div>
 					  <select id="language" placeholder="Language" name="language" className="language-select">
