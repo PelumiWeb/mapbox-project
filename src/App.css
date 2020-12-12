@@ -19,3 +19,7 @@
   height: 8rem;
   position: relative !important;
 }
+
+.App .map {
+  display: none;
+}

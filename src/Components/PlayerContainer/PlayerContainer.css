@@ -1,8 +1,12 @@
 .audio_player {
-  position: relative;
-  margin: 0 auto;
-  background-color: #dfdfdf;
-  height: 12rem;
+  position: relative !important;
+  margin: 0 auto !important;
+  background-color: #dfdfdf !important;
+  height: 12rem !important;
+}
+
+.audio_player-container {
+  transform: translateY(10rem);
 }
 
 .player {
@@ -41,7 +45,9 @@
 }
 
 .tracks .btn {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
+  z-index: 20;
+  cursor: pointer;
 }
 
 .tracks .btn a {
@@ -51,4 +57,11 @@
 .tracks .language-select {
   width: 70px;
   margin-left: 15px;
+  z-index: 20;
+}
+
+.audio_player-container {
+  transform: translateY(-0.5rem);
+  top: 25%;
+  left: 1%;
 }

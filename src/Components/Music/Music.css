@@ -1,5 +1,11 @@
-.Music {
-  transform: translate(0%, 50%);
+/* .Music {
+  transform: translateY(-8rem);
+  top: 25%;
+  left: 7%;
+} */
+
+.Music:focus,
+.Music:active {
 }
 
 .audio {
@@ -9,4 +15,8 @@
   background-color: #dfdfdf0a !important;
   border-radius: 10px !important;
   color: ;
+}
+.audio:focus,
+.audio:active {
+  outline: none;
 }

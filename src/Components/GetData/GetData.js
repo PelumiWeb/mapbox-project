@@ -1,18 +1,20 @@
 import React, {useState, useEffect} from 'react'
-import axios from 'axios'
+import axios from "axios"
 
-function GetData() {
-    const url = "http://52.90.82.235:8888/geotourdata/json.cfm?h=-107,37,s,en,3A771765"
 
-    axios.get(url).then(response => {
-        console.log(response)
-    })
-   
+export const  fectchData = () => {
+  
+    const url = "https://52-90-82-235.maverickmaven.com/geotourdata/json.cfm?h=-107,37,s,en,3A771765"
     return (
-        <div>
-            
-        </div>
-    )
+    axios.get(url)
+    .then(response => response.data.features
+    ))
 }
 
-export default GetData
+
+
+
+export const useDataMap = async () => {
+   const data = await fectchData()
+   return data
+}

@@ -9,12 +9,18 @@
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.5.0",
     "axios": "^0.21.0",
+    "get-audio-duration": "^2.0.3",
+    "get-blob-duration": "^1.1.2",
+    "mobx": "^6.0.4",
+    "mobx-react": "^7.0.5",
+    "mp3-duration": "^1.1.0",
     "react": "^17.0.1",
     "react-audio-player": "^0.14.0",
     "react-dom": "^17.0.1",
     "react-jinke-music-player": "^4.19.1",
     "react-map-gl": "^5.2.10",
     "react-scripts": "4.0.1",
+    "react-word-limit": "^1.0.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

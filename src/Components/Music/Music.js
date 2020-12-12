@@ -1,63 +1,35 @@
-import React , {useEffect, useState} from 'react'
+import { useObserver } from 'mobx-react'
+import React , {useEffect, useState, useContext} from 'react'
 import ReactAudio from 'react-audio-player'
-import 'react-jinke-music-player/assets/index.css'
 import './Music.css'
-import axios from 'axios'
+import {StoreContext} from '../../stores/store' 
+import getBlobDuration from 'get-blob-duration'
 
 
-function Music({CurrentSong}) {
-    // const [data, setData] = useState()
-    // const [song, setSong] = useState([])
-    // //s/    
 
-    // useEffect(() => {
-    //     const url = "http://52.90.82.235:8888/geotourdata/json.cfm?h=-107,37,s,en,3A771765"
 
-    //     axios.get(url).then(response => {
-       
-    //   let features = response.data.features.filter(elem => {
-    //     return  elem.type === 'Feature'
-    //   })
-    //   let series = response.data.features.filter(elem => {
-    //     return  elem.type === 'Series'
-    //   })
-      
-    //   features.map(el => {
-    //      return {...el}
-    //   })
 
-    //   series.map(el => {
-    //     return {...el}
-    // })
+function Music({}) {
+  const store = useContext(StoreContext)
+ 
+  // (async function() {
+  //   const duration = await getBlobDuration(store.currentSong)
+  //   console.log(duration + ' seconds')
+  // })()  
 
-    // setData(features)
-    // })
-
-       
-       
+   return useObserver(() => (
+    <div className='Music'>
+    <ReactAudio 
+    className={'audio'}
+    src={store.currentSong}
+    controls
+    autoPlay
     
-
-    // },[setData, setSong])
-
-
-// console.log(data)
-        
-
-
-
-
-
-    
-    return (
-        <div className='Music'>
-           <ReactAudio 
-           className={'audio'}
-           src={`${CurrentSong}`}
-           controls
-           autoPlay
-           /> 
-        </div>
-    )
+    /> 
+ </div>
+   ))
+             
+  
 }
 
 export default Music

@@ -1,0 +1,16 @@
+.Marker {
+  color: green;
+}
+
+.btn {
+  color: red;
+}
+.marker {
+  color: rgba(79, 187, 79, 0.945);
+  font-size: 0.2rem;
+  cursor: pointer;
+}
+
+.style {
+  width: 480px !important;
+}
